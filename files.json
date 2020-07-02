@@ -1,0 +1,134 @@
+{
+    "search": [
+        "config"
+    ],
+    "files": {
+        "html": {
+            "icon": "html.svg",
+            "level": 0
+        },
+        "xml": {
+            "icon": "xml.svg",
+            "level": 1
+        },
+
+        "js": {
+            "icon": "javascript.svg",
+            "level": 10
+        },
+        "ts": {
+            "icon": "typescript.svg",
+            "level": 11
+        },
+        "coffee": {
+            "icon": "coffee.svg",
+            "level": 12
+        },
+        "json": {
+            "icon": "json.svg",
+            "level": 13
+        },
+        "vue": {
+            "icon": "vue.svg",
+            "level": 14
+        },
+        "jsx": {
+            "icon": "react.svg",
+            "level": 15
+        },
+        "config": {
+            "icon": "settings.svg",
+            "level": 16
+        },
+
+        "css": {
+            "icon": "css.svg",
+            "level": 20
+        },
+        "less": {
+            "icon": "less.svg",
+            "level": 21
+        },
+        "scss": {
+            "icon": "sass.svg",
+            "level": 22
+        },
+        "sass": {
+            "icon": "sass.svg",
+            "level": 23
+        },
+        "stylus": {
+            "icon": "stylus.svg",
+            "level": 24
+        },
+
+        "webpack": {
+            "icon": "webpack.svg",
+            "level": 31
+        },
+        "md": {
+            "icon": "markdown.svg",
+            "level": 32
+        },
+
+        "jpg": {
+            "icon": "image.svg",
+            "level": 40
+        },
+        "png": {
+            "icon": "image.svg",
+            "level": 41
+        },
+        "svg": {
+            "icon": "svg.svg",
+            "level": 42
+        },
+        "mp4": {
+            "icon": "video.svg",
+            "level": 43
+        },
+        "avi": {
+            "icon": "video.svg",
+            "level": 44
+        },
+        "flv": {
+            "icon": "video.svg",
+            "level": 45
+        },
+        "mov": {
+            "icon": "video.svg",
+            "level": 46
+        },
+
+        "eot": {
+            "icon": "font.svg",
+            "level": 50
+        },
+        "otf": {
+            "icon": "font.svg",
+            "level": 51
+        },
+        "ttf": {
+            "icon": "font.svg",
+            "level": 52
+        },
+        "ttc": {
+            "icon": "font.svg",
+            "level": 53
+        },
+        "woff": {
+            "icon": "font.svg",
+            "level": 54
+        },
+
+        "default": {
+            "icon": "document.svg",
+            "level": 80
+        },
+        "npm": {
+            "icon": "npm.svg",
+            "level": 100
+        }
+
+    }
+}

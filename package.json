@@ -1,0 +1,50 @@
+{
+  "name": "webpack-tree",
+  "displayName": "webpack tree",
+  "description": "",
+  "version": "0.0.11",
+  "publisher": "xux2020",
+  "engines": {
+    "vscode": "^1.2.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "main.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.getEntryWebpack",
+        "title": "Get the webpack file as the entry"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.getEntryWebpack",
+          "group": "navigation"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "treeView",
+          "title": "WEBPACK TREE",
+          "icon": "img/tree2.svg"
+        }
+      ]
+    },
+    "views": {
+      "treeView": [
+        {
+          "id": "treeView-item",
+          "name": ""
+        }
+      ]
+    }
+  }
+}
