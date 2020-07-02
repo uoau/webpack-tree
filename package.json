@@ -18,7 +18,7 @@
     "commands": [
       {
         "command": "extension.getEntryWebpack",
-        "title": "Get the webpack file as the entry"
+        "title": "webpack tree:load json"
       }
     ],
     "menus": {
