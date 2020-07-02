@@ -1,8 +1,8 @@
 {
   "name": "webpack-tree",
   "displayName": "webpack tree",
-  "description": "",
-  "version": "0.0.11",
+  "description": "This extension can show the dependency tree of your webpack project.",
+  "version": "0.0.12",
   "publisher": "xux2020",
   "engines": {
     "vscode": "^1.2.0"
