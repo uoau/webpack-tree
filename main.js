@@ -49,6 +49,9 @@ class TreeItemNode {
                 this.label = this.filename;
             }
         }
+        if(jsonData.note && jsonData.note[uri]){
+            this.label = `[${jsonData.note[uri]}] ${this.label}`;
+        }
 
         this.children = childrenName.map((item) => {
             return new TreeItemNode({
@@ -189,4 +192,13 @@ exports.activate = function(context) {
             });
         }
     }));
+
+    // user click note button
+    context.subscriptions.push(vscode.commands.registerCommand('extension.editNote', async (res) => {
+        const filePath = res.uri;
+        const inputContent = await vscode.window.showInputBox()
+        jsonData.note = jsonData.note || {};
+        jsonData.note[filePath] = inputContent;
+        fs.writeFileSync(jsonPath, JSON.stringify(jsonData, null, 4));
+    }));    
 };

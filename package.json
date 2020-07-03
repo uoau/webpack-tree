@@ -2,7 +2,7 @@
   "name": "webpack-tree",
   "displayName": "webpack tree",
   "description": "This extension can show the dependency tree of your webpack project.",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "publisher": "xux2020",
   "engines": {
     "vscode": "^1.2.0"
@@ -23,6 +23,14 @@
       {
         "command": "extension.getEntryWebpack",
         "title": "webpack tree:load json"
+      },
+      {
+        "command": "extension.editNote",
+        "title": "Edit",
+        "icon": {
+          "light": "img/edits1.svg",
+          "dark": "img/edits2.svg"
+        }
       }
     ],
     "menus": {
@@ -30,6 +38,12 @@
         {
           "command": "extension.getEntryWebpack",
           "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "extension.editNote",
+          "group": "inline"
         }
       ]
     },
