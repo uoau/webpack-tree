@@ -24,7 +24,7 @@ function getFileInfo(filename){
         return filename.indexOf(item) > -1; 
     })
     if(!use){
-        use = filename.match(/\.(.*)$/);
+        use = filename.match(/\.([^\/]*)$/);
         use = use ? use[1] : undefined;
     }
     if(!use || !filesJson.files[use]){
@@ -50,7 +50,7 @@ class TreeItemNode {
             }
         }
         if(jsonData.note && jsonData.note[uri]){
-            this.label = `[${jsonData.note[uri]}] ${this.label}`;
+            this.label = jsonData.note[uri];
         }
 
         this.children = childrenName.map((item) => {
@@ -64,7 +64,7 @@ class TreeItemNode {
             return a.level - b.level;
         })
         this.collapsibleState = collapsibleState;
-        let fileInfo = getFileInfo(this.label);
+        let fileInfo = getFileInfo(this.uri);
         this.level = this.isModule ? 100 : fileInfo.level;
         this.iconPath =  
             this.isModule ?
