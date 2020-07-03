@@ -107,13 +107,11 @@ function initTree(uri){
     const jsonStr = fs.readFileSync(uri);
     let jsonObj = {};
     if(!jsonStr){
-        vscode.window.showErrorMessage('未找到文件或文件为空');
         return false;
     }
     try {
         jsonObj = JSON.parse(jsonStr);
     }catch(e) {
-        vscode.window.showErrorMessage('请使用格式正确的 json 文件');
         return false;
     }
     jsonData = jsonObj;
