@@ -4,8 +4,9 @@ const fs = require('fs');
 const filesJson = JSON.parse(fs.readFileSync(path.join(__dirname, 'files.json')));
 const child_process = require('child_process');
 
-let jsonPath = ''; // 依赖树json的地址
+let jsonPath = '';   // 依赖树json的地址
 let jsonData = {};   // 依赖树数据
+let watchObj = null;   // 监听变化的对象
 
 function open(uri) {
     if (process.platform == 'wind32') {
@@ -132,6 +133,7 @@ function autoSearchJson(){
                 files.forEach((item) => {
                     if(item === 'dependency-tree.json'){
                         jsonPath = path.join(thisPath, 'dependency-tree.json');
+                        
                     }
                 })  
             }catch(e) {
@@ -142,6 +144,16 @@ function autoSearchJson(){
         }
     }
     jsonPath ? initTree(jsonPath) : null;
+    startWatch();
+}
+
+function startWatch(){
+    if(watchObj){
+        watchObj.close();
+    }
+    watchObj = fs.watch(jsonPath, function (event, filename) {
+        initTree(jsonPath);
+    });
 }
 
 exports.activate = function(context) {
@@ -151,6 +163,7 @@ exports.activate = function(context) {
     // user selected the dependency-tree.json
     context.subscriptions.push(vscode.commands.registerCommand('extension.getEntryWebpack', async (uri) => {
         initTree(uri.path);
+        startWatch();
     }));
 
     // click the tree item
@@ -176,11 +189,4 @@ exports.activate = function(context) {
             });
         }
     }));
-    
-    // on json change & hot change
-    vscode.workspace.onDidChangeTextDocument((obj) => {
-        if(obj.document.fileName === jsonPath){
-            initTree(jsonPath);
-        }
-    })
 };
