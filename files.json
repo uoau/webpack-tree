@@ -83,21 +83,25 @@
             "icon": "svg.svg",
             "level": 42
         },
-        "mp4": {
-            "icon": "video.svg",
+        "gif": {
+            "icon": "image.svg",
             "level": 43
         },
-        "avi": {
+        "mp4": {
             "icon": "video.svg",
             "level": 44
         },
-        "flv": {
+        "avi": {
             "icon": "video.svg",
             "level": 45
         },
-        "mov": {
+        "flv": {
             "icon": "video.svg",
             "level": 46
+        },
+        "mov": {
+            "icon": "video.svg",
+            "level": 47
         },
 
         "eot": {

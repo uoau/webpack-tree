@@ -27,7 +27,7 @@ function getFileInfo(filename){
         use = filename.match(/\.(.*)$/);
         use = use ? use[1] : undefined;
     }
-    if(!use){
+    if(!use || !filesJson.files[use]){
         use = 'default';
     }
     return filesJson.files[use];
